@@ -12,7 +12,7 @@ function getRandomColor() {
   let letters = '0123456789abcdef';
   let randomColor = '';
   for (let i = 0; i < 6; i++) {
-    randomColor += letters[Math.floor(Math.random() * 10)];
+    randomColor += letters[Math.floor(Math.random() * 16)];
   }
   return randomColor;
 }
@@ -23,6 +23,7 @@ sky.setAttribute('animation__color', `property: color; dir: alternate; dur: 2000
 
 // change this value for more or less rings
 let totalRingElements = 25;
+let fl=0;
 
 function generateAllElements() {
 
@@ -52,8 +53,10 @@ function generateAllElements() {
       let circleElement = document.createElement('a-entity');
       circleElement.setAttribute('class', `circleElement`);
       circleElement.setAttribute('scale', `${elementScale} ${elementScale} ${elementScale}`);
-      //circleElement.setAttribute('material', `color:#${getRandomColor()}; metalness: 0; roughness: 0`);
-      circleElement.setAttribute('material', `wireframe:#${getRandomColor()}; metalness: 1; roughness: 0`);      
+      if(fl==1)
+      {circleElement.setAttribute('material', `color:#${getRandomColor()}; metalness: 0; roughness: 0`);}
+      else
+      {circleElement.setAttribute('material', `wireframe:#${getRandomColor()}; metalness: 1; roughness: 0`);}     
       circleElement.setAttribute('geometry', `primitive: sphere; radius: 1.5`);
       circleElement.setAttribute('animation__yoyo', `property: scale; dir: alternate; dur: ${scaleDuration}; easing: easeInOutSine; loop: true; to: 0 0 0`);
       circleElementContainer.appendChild(circleElement);
@@ -93,6 +96,7 @@ function generateAllElements() {
     }
 
   }
+  fl=1-fl;
 
 }
 
