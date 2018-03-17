@@ -23,12 +23,12 @@ sky.setAttribute('animation__color', `property: color; dir: alternate; dur: 2000
 
 // change this value for more or less rings
 let totalRingElements = 25;
-let fl=1;
+
 
 function generateAllElements() {
 
   for(let a = 0; a < totalRingElements; a++){
-
+    let fl=1;
     sky.setAttribute('color', `#${getRandomColor()}`);
     sky.setAttribute('animation__color', `property: color; dir: alternate; dur: 2000; easing: easeInOutSine; loop: true; to: #${getRandomColor()}`);
     // element params
