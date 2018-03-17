@@ -23,7 +23,7 @@ sky.setAttribute('animation__color', `property: color; dir: alternate; dur: 2000
 
 // change this value for more or less rings
 let totalRingElements = 25;
-let fl=0;
+let fl=1;
 
 function generateAllElements() {
 
@@ -56,7 +56,8 @@ function generateAllElements() {
       if(fl==1)
       {circleElement.setAttribute('material', `color:#${getRandomColor()}; metalness: 0; roughness: 0`);}
       else
-      {circleElement.setAttribute('material', `wireframe:#${getRandomColor()}; metalness: 1; roughness: 0`);}     
+      {circleElement.setAttribute('material', `wireframe:#${getRandomColor()}; metalness: 1; roughness: 0`);} 
+      fl=1-fl;
       circleElement.setAttribute('geometry', `primitive: sphere; radius: 1.5`);
       circleElement.setAttribute('animation__yoyo', `property: scale; dir: alternate; dur: ${scaleDuration}; easing: easeInOutSine; loop: true; to: 0 0 0`);
       circleElementContainer.appendChild(circleElement);
@@ -96,7 +97,7 @@ function generateAllElements() {
     }
 
   }
-  fl=1-fl;
+  
 
 }
 
