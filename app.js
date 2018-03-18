@@ -57,7 +57,7 @@ function generateAllElements() {
       {circleElement.setAttribute('material', `color:#${getRandomColor()}; metalness: 0; roughness: 0`);}
       else
       {//circleElement.setAttribute('material', `wireframe:#${getRandomColor()}; metalness: 1; roughness: 0`);
-        ircleElement.setAttribute('material', `color:#000000; metalness: 0; roughness: 0`);
+        circleElement.setAttribute('material', `color:#000000; metalness: 0; roughness: 0`);
       } 
       fl=1-fl;
       circleElement.setAttribute('geometry', `primitive: sphere; radius: 1.5`);
